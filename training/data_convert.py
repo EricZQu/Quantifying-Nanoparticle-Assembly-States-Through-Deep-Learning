@@ -8,7 +8,8 @@ import tensorflow as tf
 import numpy as np
 
 
-flags.DEFINE_string('dataset', '', 'path to dataset')
+flags.DEFINE_string('dataset', '', 'path to dataset label file')
+flags.DEFINE_string('output', 'data/', 'path to output folder')
 flags.DEFINE_float('val_split', 0.2, 'validation split')
 flags.DEFINE_float('subset', 1, 'get a subset of training set (0 ~ 1)')
 
@@ -68,14 +69,14 @@ def main(_argv):
     train_lines = lines[:num_train]
     val_lines = lines[num_train:]
 
-    writer = tf.io.TFRecordWriter("data/particle_train.tfrecord")
+    writer = tf.io.TFRecordWriter(FLAGS.output + "particle_train.tfrecord")
     for line in train_lines:
         boxes = line.split()
         tf_example = build_example(boxes)
         writer.write(tf_example.SerializeToString())
     writer.close()
 
-    writer = tf.io.TFRecordWriter("data/particle_val.tfrecord")
+    writer = tf.io.TFRecordWriter(FLAGS.output + "particle_val.tfrecord")
     for line in val_lines:
         boxes = line.split()
         tf_example = build_example(boxes)
