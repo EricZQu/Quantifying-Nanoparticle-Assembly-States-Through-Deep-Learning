@@ -43,9 +43,25 @@ https://www.nvidia.com/Download/index.aspx
 
 ##### cut_size
 
+The size of the sliding windows performed on the large image in pixels. Please set this value sush that each cut contains 4-6 particles in average. Empirically, this is the most important variable in detection. 
+
+##### stride
+
+The stride of the sliding window. For intuitive consideration, this value is stride/cut_size. 1/2 or 1/3 is recommended, smaller ones will cost more computation time with the same resutls. 
+
+##### margin
+
+This is the margin of image that will not be detected (this value is margin / cut_size). The default 1/16 is good enough for general cases. 
 
 
 
+##### image_directory & image_path
+
+If the parameter "--image_path" is assigned to an image path, the program will only detect this single image. Otherwise, the program will detect all images in "--image_directory".
+
+##### image_type
+
+The type of image files in "--image_directory". For example, "png", "tif", "jpeg", etc. 
 
 #### Example 
 
