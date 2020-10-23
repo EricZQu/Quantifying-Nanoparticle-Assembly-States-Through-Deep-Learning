@@ -26,6 +26,12 @@ sudo apt install nvidia-driver-430
 https://www.nvidia.com/Download/index.aspx
 ```
 
+#### Download Weights
+
+TODO
+
+Please put the weights into `yolov3_tf2/`
+
 ### Files
 
 | Name          | Description                     |
