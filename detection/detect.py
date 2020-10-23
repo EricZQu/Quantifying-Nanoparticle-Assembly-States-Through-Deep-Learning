@@ -42,10 +42,6 @@ def detect_tfrecord_batch(record_path, weights = './yolov3_tf2/yolov3_model.tf',
     for filePath in glob.glob("./yolov3_tf2/tmp/*.txt"):
         os.remove(filePath)
 
-    physical_devices = tf.config.experimental.list_physical_devices('GPU')
-    for physical_device in physical_devices:
-        tf.config.experimental.set_memory_growth(physical_device, True)
-
     yolo = YoloV3(classes=num_classes)
 
     yolo.load_weights(weights).expect_partial()
@@ -307,6 +303,9 @@ def WriteText(name, allBox, type):
 
 def main(_argv):
     plt.rcParams['image.cmap'] = 'gray'
+    physical_devices = tf.config.experimental.list_physical_devices('GPU')
+    for physical_device in physical_devices:
+        tf.config.experimental.set_memory_growth(physical_device, True)
     if FLAGS.image_path != '':
         name = FLAGS.image_path
         DeleteCache()

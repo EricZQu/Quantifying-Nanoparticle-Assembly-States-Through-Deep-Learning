@@ -53,7 +53,15 @@ The stride of the sliding window. For intuitive consideration, this value is str
 
 This is the margin of image that will not be detected (this value is margin / cut_size). The default 1/16 is good enough for general cases. 
 
+##### output_type
 
+There are 5 types of output offered in the tool. 
+
+- boxes: Output a txt file with basic bounding boxes in each line (x_min y_min x_max y_max)
+- center: Output a txt file with center coordinates of boxes in each line (x_center y_center)
+- center_size: Output a txt file with center coordinates of boxes and size in each line: (x_center y_center width*height)
+- json: Output a json file that is compatible with labeling software "colabler"
+- benchmark: Output a txt file for mAP calcuation ('particle' confidence x_min y_min x_max y_max)
 
 ##### image_directory & image_path
 
@@ -62,6 +70,10 @@ If the parameter "--image_path" is assigned to an image path, the program will o
 ##### image_type
 
 The type of image files in "--image_directory". For example, "png", "tif", "jpeg", etc. 
+
+##### Other parameters
+
+Other parameters can be set to default.
 
 #### Example 
 
