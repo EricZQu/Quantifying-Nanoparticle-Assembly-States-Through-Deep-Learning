@@ -20,5 +20,13 @@ For training purpose, please see README in `training/`
 
 ![](./results/pred0.png)
 
+![](./results/pred4.png)
+
+![](./results/pred5.png)
+
+![](./results/pred6.png)
+
+![](./results/pred7.png)
+
 ## Citation 
 
