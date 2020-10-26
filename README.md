@@ -14,19 +14,7 @@ For training purpose, please see README in `training/`
 
 ![](./results/pred3.png)
 
-![](./results/pred2.png)
-
-![](./results/pred1.png)
-
-![](./results/pred0.png)
-
-![](./results/pred4.png)
-
-![](./results/pred5.png)
-
-![](./results/pred6.png)
-
-![](./results/pred7.png)
+Some detection results can be find in `samples/`
 
 ## Citation 
 
