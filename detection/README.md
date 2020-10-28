@@ -28,9 +28,11 @@ https://www.nvidia.com/Download/index.aspx
 
 #### Download Weights
 
-TODO
+[Google Drive](https://drive.google.com/file/d/1AEGGwetIoUULm0kM1ZXKo6Zj_klLLMZt/view?usp=sharing)
 
-Please put the weights into `yolov3_tf2/`
+md5: 49ff4e8e4d1235eee0408d431456ae6e
+
+Please uzip and put the weights (three files) into `yolov3_tf2/`
 
 ### Files
 
