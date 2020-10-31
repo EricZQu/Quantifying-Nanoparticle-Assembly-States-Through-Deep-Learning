@@ -73,7 +73,7 @@ There are 5 types of output offered in the tool.
 
 ##### image_directory & image_path
 
-If the parameter "--image_path" is assigned to an image path, the program will only detect this single image. Otherwise, the program will detect all images in "--image_directory".
+If the parameter "--image_path" is assigned to an image path, the program will only detect this single image. Otherwise, the program will detect all images (of image_type) in "--image_directory" .
 
 ##### image_type
 
@@ -86,7 +86,7 @@ Other parameters can be set to default.
 #### Example 
 
 ```bash
-python train.py --classes ./data/particle.names --dataset ./data/particle_train.tfrecord --val_dataset ./data/particle_val.tfrecord --epochs 25 --learning_rate 1e-4 --num_classes 1 --transfer darknet --weights ./checkpoints/yolov3.tf --weights_num_classes 80
+python detect_img.py --cut_size 100 --image_type tif --image_directory samples/ --output_type boxes
 ```
 
 ## Command Line Args Reference
