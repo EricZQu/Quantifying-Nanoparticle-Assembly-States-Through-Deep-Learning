@@ -28,20 +28,22 @@ def main(_argv):
 	val_mAP = []
 
 	with open("mAP.txt", "w") as f:
-		for i in range(epochs_start, epochs + 1):
-			weights_path = FLAGS.weights_path + 'yolov3_train_{}.tf'.format(i + 1)
+		for i in range(FLAGS.epochs_start, FLAGS.epochs + 1):
+			weights_path = FLAGS.weights_path + 'yolov3_train_{}.tf'.format(i)
 			# print(model_path)
 			os.system("python detect_list.py --classes {} --size {} --weights {} --num_classes {} --tfrecord {} --batch_size {}".format(FLAGS.classes, FLAGS.size, weights_path, FLAGS.num_classes, FLAGS.train_dataset, FLAGS.batch_size))
 			# detect_tfrecord(record_path = train, weights = weights_path, classes = classes, num_classes = num_classes)
 
 			train_mAP.append(calc_map())
+			print(train_mAP[-1])
 
 			# detect_tfrecord(record_path = val, weights = weights_path, classes = classes, num_classes = num_classes)
 			os.system("python detect_list.py --classes {} --size {} --weights {} --num_classes {} --tfrecord {} --batch_size {}".format(FLAGS.classes, FLAGS.size, weights_path, FLAGS.num_classes, FLAGS.val_dataset, FLAGS.batch_size))
 			
 			val_mAP.append(calc_map())
+			print(val_mAP[-1])
 
-			f.write("{}, {}\n".format(train_mAP[i], val_mAP[i]))
+			f.write("{}, {}\n".format(train_mAP[-1], val_mAP[-1]))
 
 			
 
@@ -50,3 +52,4 @@ if __name__ == '__main__':
         app.run(main)
     except SystemExit:
         pass
+
