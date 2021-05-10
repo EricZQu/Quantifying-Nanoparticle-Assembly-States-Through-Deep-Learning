@@ -18,3 +18,4 @@ Some detection results can be find in `samples/`
 
 ## Citation 
 
+If you use this tool in your work, consider citing [https://pubs.acs.org/doi/10.1021/acs.macromol.0c02483](https://pubs.acs.org/doi/10.1021/acs.macromol.0c02483)
