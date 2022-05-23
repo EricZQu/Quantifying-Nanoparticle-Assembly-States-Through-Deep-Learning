@@ -99,7 +99,7 @@ Other parameters can be set to default.
 #### Example 
 
 ```bash
-python detect.py --cut_size 100 --image_type tif --image_directory samples/ --output_type boxes
+python detect.py --cut_size 100 --image_type png --image_directory samples/ --output_type boxes
 ```
 
 ## Command Line Args Reference
